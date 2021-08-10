@@ -1,0 +1,113 @@
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 150%;
+}
+/* 
+button {
+  margin: 20rem;
+  padding: 2rem 4rem;
+  border-style: solid;
+  color: dodgerblue;
+  border-radius: 1rem;
+  border-color: red;
+  background: none;
+} */
+
+h1 {
+  font-size: 5rem;
+}
+
+/* FLEXBOX */
+
+.container {
+  background-color: steelblue;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+  height: 100px;
+  width: 100px;
+}
+
+.box1 {
+  background: rgb(56, 0, 0);
+  flex: 1 1 1;
+
+  align-self: flex-start;
+}
+
+.box2 {
+  background: rgb(0, 2, 102);
+  flex: 1 1 1;
+}
+
+.box3 {
+  background: rgb(123, 194, 91);
+  flex: 1 1 1;
+
+  align-self: flex-end;
+}
+
+.box4 {
+  background: rgb(165, 93, 0);
+  flex: 1 1 1;
+}
+.box5 {
+  background: rgb(240, 126, 126);
+  flex: 1 1 1;
+
+  align-self: flex-start;
+}
+
+/* GRID */
+.grid-container {
+  background-color: steelblue;
+  height: 500px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  justify-content: space-evenly;
+}
+
+.grid-box1,
+.grid-box2,
+.grid-box3,
+.grid-box4,
+.grid-box5 {
+  height: 100px;
+  width: 100px;
+}
+
+.grid-box1 {
+  background: rgb(56, 0, 0);
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.grid-box2 {
+  background: rgb(0, 2, 102);
+}
+
+.grid-box3 {
+  background: rgb(123, 194, 91);
+}
+
+.grid-box4 {
+  background: rgb(165, 93, 0);
+}
+
+.grid-box5 {
+  background: rgb(240, 126, 126);
+}

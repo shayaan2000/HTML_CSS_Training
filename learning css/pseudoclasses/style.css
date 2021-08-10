@@ -1,0 +1,30 @@
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 150%;
+}
+
+button {
+  margin: 20rem;
+  padding: 2rem 4rem;
+  border-style: solid;
+  color: dodgerblue;
+  border-radius: 1rem;
+  border-color: dodgerblue;
+  background: none;
+}
+
+button:hover {
+  color: white;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+
+button:focus {
+  border-color: yellow;
+  background-color: dodgerblue;
+  color: white;
+}

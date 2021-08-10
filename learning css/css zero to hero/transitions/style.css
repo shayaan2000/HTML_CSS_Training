@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 150%;
+}
+
+button {
+  margin: 20rem;
+  padding: 2rem 4rem;
+  border-style: solid;
+  color: dodgerblue;
+  border-radius: 1rem;
+  border-color: dodgerblue;
+  transition: all 2s ease;
+}
+
+button:hover {
+  background: grey;
+  cursor: pointer;
+
+  transform: translate(50px, 30px);
+  transform: scale(2.5);
+  transform: rotate(-45deg);
+  transform: skewX(45deg);
+}

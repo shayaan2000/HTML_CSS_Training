@@ -1,0 +1,72 @@
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 150%;
+}
+/* 
+button {
+  margin: 20rem;
+  padding: 2rem 4rem;
+  border-style: solid;
+  color: dodgerblue;
+  border-radius: 1rem;
+  border-color: red;
+  background: none;
+} */
+
+.container {
+  height: 90%;
+  width: 80%;
+  background-color: cadetblue;
+  margin: auto;
+  position: relative;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+  width: 20%;
+  height: 15%;
+  background-color: crimson;
+}
+
+/* absolute inside a relative will position it wrt to parent */
+.box2 {
+  background-color: dodgerblue;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* position relative and then top left etc move it wrt to its initial position */
+.box3 {
+  background-color: forestgreen;
+  position: relative;
+  left: 20rem;
+}
+
+/* one way to centre, using transform:translate */
+.box1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Fixed keeps it at one point on the screen despite scrolling */
+.box4 {
+  background: grey;
+  position: fixed;
+}
+
+/* when top 0 changes from relative to fixed */
+.box5 {
+  position: sticky;
+  top: 0%;
+  background-color: black;
+}

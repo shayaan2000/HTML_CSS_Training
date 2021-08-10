@@ -1,0 +1,177 @@
+<!-- HTML CSS CRASH COURSE - 4 hours one -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name= "description" content="Just a test">
+    <meta name= "robots" content= "index, follow">
+    <title>learning html</title>
+
+    
+    
+</head>
+
+
+<body>
+    
+    <!-- headings and paragraphs -->
+    <h1>Tintash</h1>
+    <h2>Tintash</h2>
+    <h3>Tintash</h3>
+    <h4>Tintash</h4>
+    <h5>Tintash</h5>
+    
+    <p>Hello, this p tag can contain <i>some normal tag</i></p>
+
+    <img 
+    width="500"
+    src="/img/pexels-flo-maderebner-869258.jpg"> 
+
+
+    <!-- Anchor with image -->
+    <h1>Anchor</h1>
+    <a target="_blank" href="https://www.google.com">Google</a> 
+    <a target="_blank" href="https://www.google.com">
+        <img src="img/pexels-caio-67112.jpg"/>
+    </a>      
+
+
+    <!-- FORMS -->
+    <h1>Forms</h1>
+    <form action="/contact.html">
+
+        <label for= "user">Username</label>
+        <input 
+            maxlength="20" 
+            type="text" 
+            id="user" 
+            name="user" 
+            placeholder="this a placeholder"
+            required
+            />
+        
+        <label for= "email">Email</label>
+        <input type="email" id="email"name="email" autocomplete="off"/>
+
+
+        
+        <!-- Dropdown -->
+        <select name="products" id="products">
+            <option value="Macbook 2018">Macbook</option>
+            <option selected value="Probook 440 g8">Probook</option>
+            
+            
+        </select>
+        
+        
+        <!-- Text area -->
+        
+        <label for= "message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+
+        <br/>
+        <!-- Radio buttons -->
+        <!-- <input type="radio" name= "products" value= "macbook"/>
+        <input type="radio" name= "products" value= "probook"/>
+        <input type="radio" name= "products" value= "thinkpad"/>
+        <input type="radio" name= "products" value= "pavilion"/>
+        <input type="radio" name= "products" value= "legion"/> -->
+
+
+        <button type= "submit">Submit</button>
+    </form>
+
+
+
+    <!-- LISTS -->
+     <h1>Lists</h1>
+
+     <ol>
+        <li>Chapter 1: Strings</li>
+        <ul>
+            <li>E</li>
+            <li>A</li>
+            <li>D</li>
+            <li>G</li>
+            <li>B</li>
+            <li>e</li>
+        </ul>
+
+        <li>Chapter 2: Basic Chords</li>
+        <ul>
+            <li>A minor</li>
+            <li>E minor</li>
+            <li>C major</li>
+            <li>G major</li>
+        </ul>
+
+    </ol>
+
+    <p><small>bullets will be edited using css^</small> </p>
+
+
+    <!-- Tables -->
+    <h1>Tables</h1>
+    <table>
+        <tr>
+            <th>First Name</th> 
+            <th>Last Name</th> 
+            <th>Age</th> 
+        </tr>
+        <tr>
+            <td>Shayaan</td> 
+            <td>Farooq</td> 
+            <td>21</td> 
+        </tr>
+
+    </table>
+
+
+
+
+    <!-- Divs, classes, ids -->
+    
+    <h1 id="logo">Divs, ids, classes etc</h1>
+    
+    <div class="articles">
+        <h2>Article 1</h2>
+        <p class="article-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis modi maxime ex reiciendis perferendis libero at repellat sed pariatur ipsa!</p>
+        
+        <h2>Article 2</h2>
+        <p class="article-text active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea obcaecati sed at amet fugiat accusantium, iusto quaerat minus non a? </p>
+        
+        <h2>Article 3</h2>
+        <p class="article-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis quo pariatur aliquid repellendus facere molestias enim maiores necessitatibus minima dicta.</p>
+    </div>
+
+
+    <!-- semantic tags like header, section, nav -->
+    <section>
+        <h2>Image gallery section</h2>
+
+        <figure>  
+            <img src="/img/pexels-flo-maderebner-869258.jpg"/>
+            <figcaption>figure: Snow everywhere</figcaption>
+        </figure>
+
+    </section>
+
+    <footer>
+        <p>this text is insidejust like a div but called footer for more semantic meaning</p>
+    </footer>
+
+
+    <!-- Entities -->
+    <h1>Entities</h1>
+    <p>e.g using a greater than sign without breaking the html</p>
+    <p>'&lt' this is done via "& lt" without the space </p>
+
+
+</body>
+</html>

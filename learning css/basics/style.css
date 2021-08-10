@@ -1,0 +1,93 @@
+/* selecting by element */
+h3 {
+  color: dodgerblue;
+}
+
+/* selecting by class */
+.first-para {
+  color: green;
+}
+
+/* selecting by id */
+#description {
+  color: orange;
+}
+
+/*universal selector*/
+* {
+  margin: 20px;
+}
+
+/*combining selectors, as many as you want*/
+section .list-heading {
+  color: purple;
+}
+
+/* selecting something below, not inside, something else, use '+' */
+.list-heading + ul {
+  color: slateblue;
+}
+
+/* 
+    direct child selector use '>'
+    will get li's that are direct children of ul, not any other eg. ol
+*/
+ul > li {
+  background-color: wheat;
+}
+
+/* 
+    selecting one specific inside a group 
+    inside ul, select 2nd li
+*/
+ul li:nth-child(2) {
+  color: red;
+}
+
+/*SPECIFICITY
+    in normal circumstances, order matters, but in this case, priority does.
+    ID > element.class > Class > element
+
+    inline style outweighs all 
+
+    one last way to override is !important (not recommended) 
+    color: blue !important;
+*/
+
+#specificity-id {
+  color: grey;
+}
+
+h5.specificity-class {
+  color: red;
+}
+
+.specificity-class {
+  color: yellow;
+}
+
+h5 {
+  color: pink;
+}
+
+/*MARGINS AND PADDINGS*/
+/* 
+    margin ousside
+    padding inside
+*/
+#margin-padding-demo-text-1 {
+  margin: 40px;
+  padding: 80px;
+  background-color: red;
+}
+#margin-padding-demo-text-2 {
+  margin: 40px;
+  padding: 100px 0px 10px 100px;
+  background-color: red;
+  border: blue;
+  border-style: solid;
+}
+
+/* border box in notes 
+  font-size em rem etc in notes too
+*/
