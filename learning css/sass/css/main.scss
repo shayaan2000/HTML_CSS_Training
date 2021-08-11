@@ -2,205 +2,169 @@
 // watch sass command will compile it and generate the main.css and main.css.map first time around
 // we dont make changes in the main.css file, they are automatically done in when they are done in the scss file.
 
-
-//VARIABLE 
-$mycolor: #005DFF; //this will replace background-color: $mycolor to #005DFF in main.css
+//VARIABLE
+$mycolor: #005dff; //this will replace background-color: $mycolor to #005DFF in main.css
 $padding: 15px;
 $border-radius: 15px;
 
 //MAPS
 $colors: (
-    primary: #005DFF,
-    primary-light: lighten(#005DFF, 40%),
-    primary-dark: darken(#005DFF, 40%),
-    accent: #FFFFBB
+  primary: #005dff,
+  primary-light: lighten(#005dff, 40%),
+  primary-dark: darken(#005dff, 40%),
+  accent: #ffffbb,
 );
 
-
 //FUNCTIONS
-@function getColor($color-name){
-    @return map-get($colors, $color-name);  //from map $colors, get primary, and return it
+@function getColor($color-name) {
+  @return map-get(
+    $colors,
+    $color-name
+  ); //from map $colors, get primary, and return it
 }
 
-//MIXIN, simplifies code. 
+//MIXIN, simplifies code.
 //current usecase: media query
 //for making it look better on web and make it more responsive
 $desktop: 840px;
 @mixin desktop {
-    @media (min-width: #{$desktop}){
-        @content;
-    }
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }
 
-
-
-body, html{
-    height: 100%;
-    width: 100%;
+body,
+html {
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    
-    font-family: sans-serif;
+  font-family: sans-serif;
+  margin: 0;
+
+  //NESTING - cant do in regular css like this
+  //converted to body #bd
+  #bg {
+    clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 100%, 0 0);
+
+    // background-color: $mycolor; //single variable reference
+    background-color: getColor(primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+    //using mixin - auto triggers
+    @include desktop {
+      clip-path: polygon(0 0, 79% 0, 51% 100%, 0% 100%);
+    }
+  }
+
+  header a {
+    color: #fff;
+    text-decoration: none;
+    padding: $padding;
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+main {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: "primary card"; //defining areas
+  }
+
+  section#card {
+    background: #fff;
+    padding: 20px;
+    margin: 1em auto;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 2);
+    width: 80%;
+
+    //using mixin
+    @include desktop {
+      grid-area: card; //from above defined
+      height: fit-content;
+      align-self: center;
+      margin: 1em;
+    }
+  }
+
+  ul {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
 
+    li {
+      margin-bottom: 10px;
 
-    //NESTING - cant do in regular css like this
-    //converted to body #bd
-    #bg{
-        clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 100%, 0 0);
-
-
-        // background-color: $mycolor; //single variable reference
-        background-color: getColor(primary);
-        width: 100%;
-        height: 100%;
+      span {
         position: absolute;
-        z-index: -1;
+        width: 30px;
+        height: 30px;
+        background-color: getColor(primary-light);
+        border-radius: 50%;
+        margin-right: 10%;
+      }
 
+      strong {
+        display: inline-block;
+        margin-left: max(40px);
+        margin-top: 10px;
+      }
+    }
+  }
 
+  section#primary {
+    color: #fff;
+    padding: $padding;
+    text-align: center;
 
-
-        //using mixin - auto triggers
-        @include desktop{
-            clip-path: polygon(0 0, 79% 0, 51% 100%, 0% 100%);
-
-        }
+    //using mixin
+    @include desktop {
+      grid-area: primary;
+      text-align: left;
+      margin: 4em 0 0 4em;
     }
 
+    h1 {
+      font-size: 3em;
+      margin-top: 10px;
+      text-transform: uppercase;
 
-    header a{
-        color: #fff;
-        text-decoration: none;
-        padding: $padding;
-        display: block;
-        text-transform: uppercase;
-
+      //using mixin
+      @include desktop {
+        width: 30%;
+        font-size: 4rem;
+        line-height: 0.9em;
+      }
     }
 
+    p {
+      font-size: 1.4em;
+    }
+
+    a {
+      color: getColor(primary-dark);
+      border-radius: $border-radius;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: getColor(accent);
+      display: block;
+      text-align: center;
+      margin: 50px auto 0 auto;
+      padding: $padding;
+
+      //using mixin
+      @include desktop {
+        display: inline-block;
+        padding: $padding $padding * 4;
+      }
+    }
+  }
 }
-
-
-main{
-
-    @include desktop{
-        display: grid;
-        grid-template-columns: 50% auto;
-        grid-template-areas: "primary card"; //defining areas
-
-    }
-
-
-    section#card{
-        background: #fff;
-        padding: 20px;
-        margin: 1em auto;
-        border-radius: $border-radius;
-        box-shadow: 0 10px 30px rgba(0, 0,0, 2);
-        width: 80%;
-
-
-        //using mixin
-        @include desktop{
-            grid-area: card; //from above defined
-            height: fit-content;
-            align-self: center;
-            margin: 1em;
-        }
-
-    }
-
-
-    ul{
-        list-style-type: none;
-        margin:0;
-        padding: 0;
-
-        li {
-            margin-bottom: 10px;
-
-            span{
-                position: absolute;
-                width: 30px;
-                height: 30px;
-                background-color: getColor(primary-light);
-                border-radius: 50%;
-                margin-right: 10%;
-            }
-
-
-            strong{
-                display: inline-block;
-                margin-left: max(40px);
-                margin-top: 10px;
-            }
-
-        }
-
-    }
-
-    section#primary{
-        color: #fff;
-        padding: $padding;
-        text-align: center;
-
-
-
-        //using mixin
-        @include desktop{
-            grid-area: primary;
-            text-align: left;
-            margin: 4em 0 0 4em;
-        }
-
-        h1{
-            font-size: 3em;
-            margin-top: 10px;
-            text-transform: uppercase;
-
-
-
-            //using mixin
-            @include desktop{
-                width: 30%;
-                font-size: 4rem;
-                line-height: 0.9em;
-            }
-
-
-        }
-
-
-        p{
-            font-size: 1.4em;
-        }
-
-        a{
-            color: getColor(primary-dark);
-            border-radius: $border-radius;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            background-color: getColor(accent);
-            display: block;
-            text-align: center;
-            margin: 50px auto 0 auto;
-            padding: $padding;
-        
-
-            //using mixin
-            @include desktop{
-                display: inline-block;
-                padding: $padding $padding*4;
-            }
-
-
-        }
-
-
-    }
-
-}
-
-
-

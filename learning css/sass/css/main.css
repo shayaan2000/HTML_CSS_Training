@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
 }
@@ -11,7 +12,7 @@ body {
 body #bg {
   -webkit-clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 100%, 0 0);
           clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 100%, 0 0);
-  background-color: #005DFF;
+  background-color: #005dff;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -129,7 +130,7 @@ main section#primary a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: #FFFFBB;
+  background-color: #ffffbb;
   display: block;
   text-align: center;
   margin: 50px auto 0 auto;
