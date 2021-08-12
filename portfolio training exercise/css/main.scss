@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+//color palette
+$colors: (
+  _primary: #22223a,
+  _primary-dark: #0d0f1c,
+  _primary-light: #393960,
+  _grey: #303841,
+  _white: #f2f2f7,
+);
+
+//function to return colors by name
+@function getColor($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+  color: getColor(_white);
+  background: getColor(_white);
+}
+
+//=======NAVBAR=========
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: getColor(_primary);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+
+  h2 {
+    text-transform: uppercase;
+    margin-left: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    list-style-type: none;
+
+    li a {
+      display: block;
+      color: getColor(_white);
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      padding: 1.5rem 2rem;
+    }
+
+    li a:hover {
+      background-color: getColor(_primary-light);
+    }
+  }
+}
+
+//=======WELCOME/ABOUT==========
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  background: linear-gradient(60deg, getColor(_grey), #000);
+  background: url("/portfolio training exercise/img/bg.jpg");
+  background-position: center;
+
+  object-fit: cover;
+  object-position: top;
+  height: 100vh;
+  overflow: auto;
+
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0.6rem;
+    transition: 0.7s;
+  }
+
+  h1:hover {
+    transform: scale(1.02);
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    color: getColor(white);
+    background-color: getColor(_primary);
+    font-style: italic;
+    padding: 0 1rem;
+    transition: 0.7s;
+  }
+
+  .subtitle:hover {
+    transform: scale(1.03);
+  }
+}
+
+//======PROJECTS/WORK==========
+#projects {
+  min-height: 100vh;
+  background: getColor(_primary-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 3rem;
+    text-decoration: underline;
+  }
+
+  //show all button
+  #btn-show-all {
+    background: none;
+    background: getColor(_grey);
+    color: getColor(_white);
+    border: none;
+    margin: 1rem 0 2rem 0;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  #btn-show-all:hover {
+    cursor: pointer;
+    background: getColor(_primary);
+  }
+
+  #btn-show-all p {
+    padding-right: 0.3em;
+  }
+
+  #btn-show-all .right-arrow {
+    transition: 1s;
+  }
+
+  #btn-show-all:hover .right-arrow {
+    transform: translate(10px, 0);
+  }
+}
+
+//the container that has project tiles
+#projects-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  max-width: 1300px;
+  flex-wrap: wrap;
+
+  .project-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    margin: 2rem 0.5rem;
+    transition: 0.6s;
+    background: getColor(_grey);
+    color: getColor(_white);
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    img {
+      width: 24rem;
+      height: 20rem;
+      object-fit: cover;
+      background: #f7f7f7;
+      padding: 0;
+      margin: 0;
+    }
+
+    h3 {
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: lighter;
+    }
+  }
+
+  .project-tile span {
+    transition: 0.6s;
+    color: getColor(_grey);
+    font-weight: bold;
+  }
+
+  .project-tile:hover span {
+    color: #bb7f10;
+  }
+
+  .project-tile:hover {
+    transform: scale(1.04);
+  }
+}
+
+//======CONTACT========
+#contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: getColor(_grey);
+
+  h1 {
+    font-size: 4rem;
+    margin: 0.6rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    color: getColor(_white);
+    font-style: italic;
+  }
+}
+
+// socials are inside contact section
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 3rem 3rem;
+
+  a {
+    text-decoration: none;
+    color: getColor(_white);
+  }
+
+  li {
+    margin: 2rem 2rem;
+    transition: 0.5s;
+    list-style: none;
+  }
+
+  li:hover {
+    transform: translate(0, 0.7rem);
+    cursor: pointer;
+  }
+
+  li p {
+    text-shadow: 0.1rem 0.1rem 0.2rem #000;
+    font-size: 1.4rem;
+  }
+}
+
+//======FOOTER========
+footer {
+  position: relative;
+  height: 10vh;
+  background: getColor(_grey);
+
+  .bottom-bar {
+    height: 1rem;
+    background: getColor(_primary);
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 1rem;
+    text-align: right;
+  }
+}
+
+//Media query for lowering text size
+@media (max-width: 440px) {
+  html {
+    font-size: 80%;
+  }
+}
